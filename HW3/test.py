@@ -1,0 +1,1 @@
+print(eval("hello123"))
