@@ -5,7 +5,7 @@ s.bind(('', 9_001)) # IP, PORT 설정
 s.listen(2)
 client, addr = s.accept()  # 클라이언트 소켓 정보
 print("Connection from ", addr)  # 클라이언트 주소 출력
-client.send(b"It is linked to the TCP calculator." + addr[0].encode())  # 클라이언트에게 클라이언트 주소 전송
+client.send(b"It is linked to the TCP calculator." + addr[0].encode()) # 클라이언트에게 클라이언트 주소 전송
 
 while True: # server 대기 시작
 

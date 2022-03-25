@@ -2,9 +2,9 @@ import socket
 
 # 소켓 생성
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-addr = ('localhost', 9001)  # 주소
-sock.connect(addr)  # 연결
-msg = sock.recv(1024)  # It is linked to the TCP calculator 메시지 받기
+addr = ('localhost', 9001) # 주소
+sock.connect(addr) # 연결
+msg = sock.recv(1024) # It is linked to the TCP calculator 메시지 받기
 print(msg.decode())
 
 while True:
