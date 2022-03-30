@@ -24,7 +24,7 @@ class Client:
         'Enter the message("send mboxId message" or "receive mboxId"):'
     )
 
-    def run(self):
+    def run(self) -> None:
         """ 클라이언트 실행 """
 
         sock = socket(AF_INET, SOCK_DGRAM)
@@ -43,7 +43,7 @@ class Client:
         sock.close()
 
 
-def main():
+def main() -> None:
     C = Client()
     C.run()
 

@@ -163,7 +163,7 @@ class Server:
                 sock.sendto(response_data.encode(), addr)
 
 
-def main():
+def main() -> None:
     S = Server()
     S.run()
 
