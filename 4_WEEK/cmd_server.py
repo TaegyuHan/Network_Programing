@@ -16,6 +16,7 @@ conn, addr = socket.accept()
 print("connected by", addr)
 
 while True:
+
     data = conn.recv(BUFSIZE)
     if not data:
         break

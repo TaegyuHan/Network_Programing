@@ -1,0 +1,10 @@
+Wed Mar 30 18:42:44 2022: Device1: Temp=20, Humid=23, Iilum=103
+Wed Mar 30 18:42:45 2022: Device1: Temp=36, Humid=61, Iilum=58
+Wed Mar 30 18:42:45 2022: Device1: Temp=0, Humid=9, Iilum=22
+Wed Mar 30 18:42:45 2022: Device1: Temp=38, Humid=27, Iilum=100
+Wed Mar 30 18:42:46 2022: Device1: Temp=2, Humid=80, Iilum=13
+Wed Mar 30 18:42:47 2022: Device2: Heartbeat=106, Steps=1985, Cal=1985
+Wed Mar 30 18:42:47 2022: Device2: Heartbeat=110, Steps=2695, Cal=2695
+Wed Mar 30 18:42:47 2022: Device2: Heartbeat=66, Steps=1017, Cal=1017
+Wed Mar 30 18:42:48 2022: Device2: Heartbeat=140, Steps=3560, Cal=3560
+Wed Mar 30 18:42:48 2022: Device2: Heartbeat=140, Steps=1869, Cal=1869

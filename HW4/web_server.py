@@ -1,10 +1,12 @@
 from socket import *
 
+
 class FileCode:
     HTML = 1
     PNG = 2
     ICO = 3
     ERROR = -1
+
 
 class WebServer:
 
@@ -115,6 +117,7 @@ class WebServer:
             conn.close()
 
         self.sock.close()
+
 
 if __name__ == '__main__':
     server = WebServer(port=80)
