@@ -2,13 +2,16 @@ from select import *
 from socket import *
 from collections import deque
 
+
 socks = []
 BUFFER = 1024
 PORT = 2550
 
+
 s_sock = socket()
 s_sock.bind(("", PORT))
 s_sock.listen()
+
 
 socks.append(s_sock)
 print(f"{str(PORT)}에서 접속 대기중")
