@@ -11,14 +11,15 @@ sel = selectors.DefaultSelector()  # 이벤트 처리기(셀럭터) 생성
 PORT = 2500
 BUF_SIZE = 1024
 
-def accept(sock: socket, mask) -> None:
+
+def accept(sock: socket, mask: int) -> None:
     """ 연결 처리 함수 """
     conn, addr = sock.accept()
     print("connected from", addr)
     sel.register(conn, selectors.EVENT_READ, read)  # 클라이언트 소켓을 이벤트 처리기에 등록
 
 
-def read(conn: socket, mask) -> None:
+def read(conn: socket, mask: int) -> None:
     """ 수신한 데이터를 처리해주는 함수 """
     data = conn.recv(BUF_SIZE)
     if not data:

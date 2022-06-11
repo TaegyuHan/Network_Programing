@@ -17,8 +17,8 @@ class WebServer:
 
     def _min_type_parsing(self, http_request: str) -> str:
         """ http 요청 min_type 파싱 함수 """
-
         request_method = http_request.split("\r\n")[0]
+        print(request_method.split()[1].split("/")[-1])
         return request_method.split()[1].split("/")[-1]
 
     def _read_file(self, file_name: str) -> (bytes, int):
