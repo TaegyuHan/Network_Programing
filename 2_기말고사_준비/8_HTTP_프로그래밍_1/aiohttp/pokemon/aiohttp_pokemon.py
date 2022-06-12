@@ -6,7 +6,6 @@ import aiohttp
 import asyncio
 import time
 
-
 async def get_pokemon(session: aiohttp.ClientSession, url: str) -> str:
     """ URL GET 포켓몬 아이디 얻기 """
     async with session.get(url) as rsp:
@@ -26,4 +25,10 @@ async def main() -> None:
         for pokemon in original_pokemon:
             print(pokemon)
 
+if __name__ == '__main__':
+    start_time = time.time()
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    asyncio.run(main())
+    end_time = time.time()
+    print(f"--- {end_time - start_time} seconds ---")
 

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IoT Device Control</title>
+</head>
+<body>
+    <script>
+        function changeLED(elmnt) {
+            window.location.href='/button?' + 'status=' + elmnt.value;
+        }
+    </script>
+    <h2>Welcome to IoT Device</h2>
+    <p>IoT Device:</p>
+    <input type="button" onclick="changeLED(this)" value="on", name="div" />
+    <input type="button" onclick="changeLED(this)" value="off", name="div" />
+</body>
+</html>

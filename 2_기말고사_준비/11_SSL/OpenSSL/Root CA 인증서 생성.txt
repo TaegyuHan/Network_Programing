@@ -1,0 +1,10 @@
+OpenSSL 설치
+URL : https://slproweb.com/products/Win32OpenSSL.html
+
+# Root CA 키 생성
+openssl ecparam -out root.key -name prime256v1 -genkey
+
+# CSR 생성
+set OPENSSL_CONF=c:/libs/openssl-0.9.8k/openssl.cnf
+
+openssl req -new -sha256 -key ./root.key -out ./root.csr

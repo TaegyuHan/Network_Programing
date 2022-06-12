@@ -3,7 +3,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib import parse, request
 import requests, json
 
-REST_API_KEY = "토큰"
+REST_API_KEY = "fa5561306fab2f925310346cf18e78a5"
 
 class HttpHandler(BaseHTTPRequestHandler):
 
@@ -36,6 +36,8 @@ class HttpHandler(BaseHTTPRequestHandler):
         parsed_path = parse.urlparse(self.path)
         query = parsed_path.query
         parsed_query = parse.parse_qs(query)
+        print(parsed_query)
+
         authorize_code = parsed_query["code"]
         print(authorize_code)
         self.response(HTTPStatus.OK, "Kakao authentication is successful.")
