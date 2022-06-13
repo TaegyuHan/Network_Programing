@@ -6,13 +6,11 @@
 
 from socket import *
 
-from oauthlib.uri_validate import port
-
 PORT = 2500
 BUF_SIZE = 1024
 
 s = socket(AF_INET, SOCK_STREAM)
-s.connect(("localhost", port))
+s.connect(("localhost", PORT))
 
 print(int(s.recv(BUF_SIZE).decode()))
 s.close()

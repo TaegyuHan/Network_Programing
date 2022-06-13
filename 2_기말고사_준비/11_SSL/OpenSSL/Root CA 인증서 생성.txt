@@ -1,10 +1,48 @@
 OpenSSL 설치
 URL : https://slproweb.com/products/Win32OpenSSL.html
 
+
 # Root CA 키 생성
-openssl ecparam -out root.key -name prime256v1 -genkey
+# 키 파일 생성 경로
+C:\Users\student\AppData\Local\VirtualStore\Program Files (x86)\OpenSSL-Win32\bin
+
+# 개인 키 (root.key)를 생성
+openssl.exe ecparam -out root.key -name prime256v1 -genkey
+# 생성된것 > root.key
 
 # CSR 생성
-set OPENSSL_CONF=c:/libs/openssl-0.9.8k/openssl.cnf
+openssl req -new -sha256 -key root.key -out root.csr
+# 생성된것 > root.csr
 
-openssl req -new -sha256 -key ./root.key -out ./root.csr
+# Root CA 인증서 발급
+openssl x509 -req -sha256 -days 365 -in root.csr -signkey root.key -out root.pem
+# 생성된것 > root.pen
+
+# --------------------------- Server --------------------------- #
+# 서버 키 생성
+openssl ecparam -out server.key -name prime256v1 -genkey
+# 생성된것 > server.key
+
+# CSR 생성
+openssl req -new -sha256 -key server.key -out server.csr
+# 생성된것 > server.csr
+
+# Root CA 인증서 발급
+openssl x509 -req -sha256 -days 365 -in server.csr -signkey server.key -out server.pem
+# 생성된것 > server.pen
+
+# san.ext file > 생성
+# 내용
+authorityKeyIdentifier=keyid,issuer
+subjectAltName = @alt_names
+
+[alt_names]
+IP.1 = 127.0.0.1
+DNS.1 = localhost
+IP.2 = iot.co.kr
+
+# 서버 인증서 발급
+openssl x509 -req -in server.csr -CA root.pem -CAkey root.key -CAcreateserial -out server.pem -days 365 -sha256 -extfile san.ext
+
+# 서버 인증서 내용 확인
+openssl x509 -in server.pem -text -noout
