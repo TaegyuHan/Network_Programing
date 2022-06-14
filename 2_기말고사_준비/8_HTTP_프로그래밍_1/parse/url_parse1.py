@@ -13,7 +13,7 @@ if __name__ == '__main__':
     print(parsed_url)  # 전부 출력
     #  ParseResult(scheme='https', netloc='search.daum.net', path='/search', params='', query='w=tot&DA=YZR&t__nil_searchbox=btn&sug=&sugo=&sq=&o=&q=iot', fragment='')
 
-    print("scheme :",parsed_url.scheme)
+    print("scheme :", parsed_url.scheme)
     # scheme : https
 
     print("netloc :", parsed_url.netloc)

@@ -25,8 +25,6 @@ def show_products(image_url: str, detection_reult: dict) -> PIL.JpegImagePlugin.
     image_rsp = requests.get(image_url)  # 이미지 다운로드
     file_jpgdata = BytesIO(image_rsp.content)
 
-    print(file_jpgdata)
-
     image = Image.open(file_jpgdata)
 
     draw = ImageDraw.Draw(image)

@@ -16,7 +16,7 @@ pwd = getpass.getpass("Password: ")
 
 cli.connect("114.71.220.5",
             port=22,
-            useraname=user,
+            username=user,
             password=pwd)
 
 
